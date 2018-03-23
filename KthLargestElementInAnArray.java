@@ -30,6 +30,7 @@ public KthLargestElementInAnArray {
 
 	// !!!
 	// implement a real min heap
+	//  see Heap.java for more details
 	// !!!
 	public int findKthLargest(int[] nums, int k) {
 		int[] heap = new int[k];
