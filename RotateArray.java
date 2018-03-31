@@ -49,7 +49,11 @@ public class RotateArray {
         int n = nums.length;
         if (k % n == 0) return;
         k = k % n;
-
+        /*
+            @param: k, the rotation steps
+            @oaram: nums, the array needs to be rotated
+            "By default" we assume the it is a right rotation
+        */
         int gcd = gcd(n, k);
         int i, j, tmp, next;
         for (i = 0; i < gcd; i++) {

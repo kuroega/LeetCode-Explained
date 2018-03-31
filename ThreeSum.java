@@ -10,6 +10,7 @@ public class ThreeSum {
             if (i == 0 || (i > 0 && nums[i] != nums[i - 1])) { // dedupe for sum
                 int left = i + 1, right = nums.length - 1, sum = 0 - nums[i];
                 while (left < right) { // bi-directional 2 Sum
+                    // binary search
                     if (nums[left] + nums[right] == sum) {
                         res.add(new ArrayList<>(Arrays.asList(nums[i], nums[left],
                             nums[right])));
@@ -19,7 +20,7 @@ public class ThreeSum {
                         while (left < right && nums[right] == nums[right - 1])
                             right--; // dedupe for 2 sum
 
-                        left++; right--; // move closer
+                        left++; right--; // move to next different number 
                     } else if (nums[left] + nums[right] < sum) left++;
                     else right--;
                 }
@@ -29,4 +30,8 @@ public class ThreeSum {
     }
 
 
+}
+
+public static void main(String[] args) {
+    
 }

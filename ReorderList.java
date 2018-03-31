@@ -12,10 +12,11 @@ public class ReorderList {
             fast = fast.next.next;
         } // find the middle node 1->2->3->4->5->6
           //                            ^        ^
-        fast = slow.next;
-        while (fast.next != null) { // we must insert the node after fast node right next to the slow node
-            ListNode tmp = fast.next;
-            fast.next = tmp.next;
+          //                               ^
+        ListNode secondHalf = slow.next;
+        while (secondHalf.next != null) { // we must insert the node after fast node right next to the slow node
+            ListNode tmp = secondHalf.next;
+            secondHalf.next = tmp.next;
             tmp.next = slow.next;
             slow.next = tmp;
         } // 1->2->3->4->5->6 => 1->2->3->6->5->4
